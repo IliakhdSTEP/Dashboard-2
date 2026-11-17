@@ -1,0 +1,28 @@
+
+.task-list {
+  margin-top: 20px;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.task span {
+  flex: 1;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+button {
+  padding: 7px 12px;
+  cursor: pointer;
+}

@@ -1,0 +1,41 @@
+
+<h1>Task Management Dashboard</h1>
+
+<div class="add-task">
+  <input #taskInput type="text" placeholder="Enter a task">
+
+  <button (click)="addTask(taskInput.value); taskInput.value = ''">
+    Add Task
+  </button>
+</div>
+
+<div class="search">
+  <input
+    #searchInput
+    type="text"
+    placeholder="Search tasks..."
+    (input)="changeSearch(searchInput.value)"
+  >
+</div>
+
+<app-task-stats
+  [total]="tasks().length"
+  [completed]="completedCount()"
+  [active]="activeCount()"
+  [percentage]="completionPercentage()">
+</app-task-stats>
+
+<app-task-filter
+  (filterChanged)="changeFilter($event)">
+</app-task-filter>
+
+<app-task-list
+  [tasks]="filteredTasks()"
+  [filter]="filter()"
+  (taskCompleted)="completeTask($event)"
+  (taskDeleted)="deleteTask($event)">
+</app-task-list>
+
+<button class="clear-btn" (click)="clearTasks()">
+  Clear All Tasks
+</button>

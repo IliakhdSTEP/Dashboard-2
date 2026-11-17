@@ -1,0 +1,22 @@
+
+<div class="task-list">
+  @for (task of tasks(); track task.id) {
+    <div class="task">
+      <input
+        type="checkbox"
+        [checked]="task.completed"
+        (change)="completeTask(task.id)"
+      >
+
+      <span [class.completed]="task.completed">
+        {{ task.title }}
+      </span>
+
+      <button (click)="deleteTask(task.id)">
+        Delete
+      </button>
+    </div>
+  } @empty {
+    <p>No tasks found.</p>
+  }
+</div>

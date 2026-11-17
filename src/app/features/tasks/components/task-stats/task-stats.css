@@ -1,0 +1,14 @@
+
+.stats {
+  display: flex;
+  gap: 25px;
+  padding: 15px;
+  margin-top: 20px;
+  background-color: #f2f2f2;
+  border-radius: 6px;
+}
+
+.stats p {
+  margin: 0;
+  font-weight: bold;
+}
